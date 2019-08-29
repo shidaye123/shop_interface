@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: dev
+
+qiniu:
+  accessKey: JERvKomYsYPWJvKepDIAuLp1H06iU3ZJxffNcl40
+  secretKey: PoCD09XrYT7c2tcpHJn2krfNzC5s10nBoaL_KdvI
+  bucket: helloworld
+
+thymeleaf:
+  mode: HTML5

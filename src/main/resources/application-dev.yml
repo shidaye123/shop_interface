@@ -1,0 +1,37 @@
+server:
+  port: 8080
+
+#jdbc:
+#  driver: com.mysql.jdbc.Driver
+#  username: root
+#  password: 123456
+#  url: jdbc:mysql://localhost:3306/shopping
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/shopping?serverTimezone=UTC
+      username: root
+      password: 123456
+      max-active: 20
+      max-wait: 6000
+      min-idel: 1
+      test-on-borrow: true
+      test-on-return: true
+mybatis:
+  mapper-location: classpath*:com/neuedu/dao/*Mapper.xml
+  config-location: classpath:MyBatisConfig.xml
+
+# 分页配置
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: countSql
+
+#定时关单
+order:
+  close:
+    timeout: 2
